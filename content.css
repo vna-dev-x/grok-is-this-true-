@@ -1,0 +1,260 @@
+/**
+ * Grok Is This Real? Checker — Content Styles
+ * Styled to blend with X/Twitter's native action buttons.
+ */
+
+/* ─── Grok Button (in tweet action bar) ─────────────────────────────── */
+
+.grok-check-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 8px;
+  margin-left: 4px;
+  transition: color 0.15s ease;
+  color: #71767b;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.grok-check-btn:hover {
+  color: #1d9bf0;
+}
+
+.grok-check-btn:hover .grok-check-icon {
+  background-color: rgba(29, 155, 240, 0.1);
+  border-radius: 50%;
+}
+
+.grok-check-btn-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 9999px;
+  transition: background-color 0.15s ease;
+}
+
+.grok-check-btn:hover .grok-check-btn-inner {
+  background-color: rgba(29, 155, 240, 0.1);
+}
+
+.grok-check-btn:active .grok-check-btn-inner {
+  background-color: rgba(29, 155, 240, 0.2);
+}
+
+.grok-check-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 0;
+  background: none;
+  transition: none;
+}
+
+.grok-check-btn-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+/* ─── Result Popover ────────────────────────────────────────────────── */
+
+.grok-check-result {
+  position: relative;
+  margin-top: 8px;
+  padding: 12px 16px;
+  background-color: #15202b;
+  border: 1px solid #38444d;
+  border-radius: 12px;
+  color: #e7e9ea;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  animation: grokFadeIn 0.2s ease-out;
+}
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .grok-check-result {
+    background-color: #ffffff;
+    border-color: #cfd9de;
+    color: #0f1419;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes grokFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grok-result-header {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.grok-result-header em {
+  color: #1d9bf0;
+  font-style: normal;
+}
+
+.grok-result-body {
+  color: #8b98a5;
+  margin-bottom: 6px;
+}
+
+.grok-result-snippet {
+  background: rgba(29, 155, 240, 0.08);
+  border-left: 3px solid #1d9bf0;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #e7e9ea;
+  margin: 8px 0;
+  word-break: break-word;
+  font-style: italic;
+}
+
+@media (prefers-color-scheme: light) {
+  .grok-result-snippet {
+    color: #0f1419;
+  }
+  .grok-result-body {
+    color: #536471;
+  }
+}
+
+.grok-result-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #71767b;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  line-height: 1;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.grok-result-close:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.grok-result-popup-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 12px;
+  background-color: #1d9bf0;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.grok-result-popup-btn:hover {
+  background-color: #1a8cd8;
+}
+
+/* ─── Grok Response Section ─────────────────────────────────────────── */
+
+.grok-response-section {
+  margin: 10px 0 6px;
+  padding: 10px 12px;
+  background: rgba(29, 155, 240, 0.06);
+  border: 1px solid rgba(29, 155, 240, 0.2);
+  border-radius: 8px;
+}
+
+.grok-response-label {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #1d9bf0;
+}
+
+.grok-response-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e7e9ea;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+@media (prefers-color-scheme: light) {
+  .grok-response-section {
+    background: rgba(29, 155, 240, 0.04);
+    border-color: rgba(29, 155, 240, 0.15);
+  }
+  .grok-response-text {
+    color: #0f1419;
+  }
+}
+
+.grok-scroll-to-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 10px;
+  background: none;
+  border: 1px solid #1d9bf0;
+  border-radius: 9999px;
+  color: #1d9bf0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.grok-scroll-to-btn:hover {
+  background-color: rgba(29, 155, 240, 0.1);
+}
+
+.grok-no-response {
+  font-style: italic;
+  color: #71767b;
+  font-size: 12px;
+}
+
+/* ─── Loading spinner ────────────────────────────────────────────────── */
+
+@keyframes grokSpin {
+  to { transform: rotate(360deg); }
+}
+
+.grok-spinner {
+  animation: grokSpin 0.8s linear infinite;
+}
+
+.grok-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ─── Result breakdown text ─────────────────────────────────────────── */
+
+.grok-result-breakdown {
+  font-size: 11px;
+  font-weight: 400;
+  color: #8b98a5;
+  display: block;
+  margin-top: 2px;
+}
